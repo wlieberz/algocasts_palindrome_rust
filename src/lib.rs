@@ -1,7 +1,8 @@
 pub fn palindrome(input: &str) -> bool {
     let mut iter = input.chars();
+    let input_len = input.len();
 
-    loop {
+    for _ in 0..input_len {
         let front_char = iter.next();
         let back_char = iter.next_back();
 
@@ -13,7 +14,8 @@ pub fn palindrome(input: &str) -> bool {
             // reached the pivot char and all others were equal:            
             return true;
         }
-    } 
+    }
+    true
 }
 
 #[cfg(test)]
